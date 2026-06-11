@@ -20,6 +20,8 @@
       --orange: #fb923c;
       --red-soft: #fecdd3;
       --green-soft: #bbf7d0;
+      --card-number: #4b5563;
+      --rounded-font: "Baloo 2", "Nunito", ui-rounded, system-ui, sans-serif;
       --shadow: 0 18px 40px rgba(36, 48, 79, 0.16);
       --soft-shadow: 0 8px 18px rgba(36, 48, 79, 0.12);
       --radius-xl: 34px;
@@ -34,7 +36,7 @@
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: "Baloo 2", "Nunito", ui-rounded, system-ui, sans-serif;
+      font-family: var(--rounded-font);
       color: var(--ink);
       background:
         radial-gradient(circle at 12% 8%, rgba(251, 113, 133, 0.28), transparent 26%),
@@ -480,7 +482,10 @@
       height: 42px;
       border-radius: 14px;
       background: #fef3c7;
-      font-weight: 900;
+      color: var(--card-number);
+      font-family: var(--rounded-font);
+      font-weight: 600;
+      letter-spacing: 0.03em;
       box-shadow: inset 0 -3px 0 rgba(36,48,79,0.08);
     }
 
@@ -494,14 +499,19 @@
     .problem {
       position: relative;
       text-align: center;
+      font-family: var(--rounded-font);
       font-size: clamp(2.8rem, 7vw, 4.6rem);
-      font-weight: 900;
-      letter-spacing: -0.05em;
+      font-weight: 600;
+      letter-spacing: 0.04em;
       line-height: 1;
+      color: var(--card-number);
     }
 
     .single-view .problem {
       font-size: clamp(5rem, 18vw, 8.8rem);
+      font-weight: 600;
+      letter-spacing: 0.045em;
+      color: var(--card-number);
     }
 
     .hint {
@@ -519,14 +529,19 @@
     .answer {
       position: relative;
       text-align: center;
+      font-family: var(--rounded-font);
       font-size: clamp(3.4rem, 9vw, 5.8rem);
-      font-weight: 900;
-      letter-spacing: -0.05em;
+      font-weight: 600;
+      letter-spacing: 0.04em;
       line-height: 0.9;
+      color: var(--card-number);
     }
 
     .single-view .answer {
       font-size: clamp(5rem, 18vw, 9.2rem);
+      font-weight: 600;
+      letter-spacing: 0.045em;
+      color: var(--card-number);
     }
 
     .answer-label {
