@@ -1197,7 +1197,9 @@
 
       if (isCorrect) {
         acceptingAnswer = false;
-        quizCorrectCount++;
+        // Only count it if this was the first try
+        const missedFirst = quizMisses.some(miss => miss.question === `${question.table} × ${question.multiplier}`);
+        if (!missedFirst) quizCorrectCount++;
         selectedBtn.classList.add("correct");
         quizFeedback.textContent = "Correct! 🎉";
         playSound("correct");
@@ -1255,8 +1257,8 @@
         <div class="score">${quizCorrectCount}/${quizQuestions.length}</div>
         <p class="helper-text">
           ${uniqueMisses.length === 0
-            ? "Perfect score. You got every fact right on the first correct pass."
-            : `Practice these ${uniqueMisses.length} multiplication fact${uniqueMisses.length === 1 ? "" : "s"} again.`}
+            ? "Perfect score. You got every fact right on the first try!"
+            : `Right on the first try. Practice these ${uniqueMisses.length} multiplication fact${uniqueMisses.length === 1 ? "" : "s"} again.`}
         </p>
 
         ${uniqueMisses.length === 0 ? "" : `
